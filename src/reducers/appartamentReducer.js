@@ -1,14 +1,23 @@
-import {TEST_DISPATCH} from '../actions/types';
+import {RECEIVE_APARTAMENTS, REQUEST_APARTAMENTS} from '../actions/types';
 
 const initialState = {
-    isChoose: false,
-    stuff: {}
+    isFetching: false,
+    stuff: []
 };
 
 export default function appartamentReducer(state = initialState, action) {
     switch (action.type) {
-        case TEST_DISPATCH :
-            return {...state, stuff: action.payload}
+        case REQUEST_APARTAMENTS :
+            return {
+                ...state,
+                isFetching: true
+            };
+        case RECEIVE_APARTAMENTS :
+            return {
+                ...state, 
+                isFetching: false,
+                stuff: action.payload
+            };
         default:
             return state;
     }
