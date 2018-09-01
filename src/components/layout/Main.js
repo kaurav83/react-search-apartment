@@ -8,8 +8,10 @@ import Grid from '@material-ui/core/Grid';
 // import Price from '../Price';
 import {connect} from 'react-redux';
 import {getAppartament, selectCurrency} from '../../actions/appartamentActions';
-import PriceList from '../PriceList';
+import PriceList from '../Price/PriceList';
 import SelectBox from '../SelectBox';
+import FilterBar from '../FilterBar/FilterBar';
+import Apartaments from '../Apartaments/Apartaments';
 
 const CURRENCY = [
   "UAH",
@@ -26,7 +28,7 @@ handleCurrencyChange = currency => {
   this.props.selectCurrency(currency);
 }
   render() {
-    const { appa, isFetching, currency} = this.props;
+    const {isFetching, currency} = this.props;
     
     return (
       <div className={layout.main}>
@@ -44,6 +46,8 @@ handleCurrencyChange = currency => {
                 options={CURRENCY}
                 onChange={this.handleCurrencyChange}
               />
+
+              <FilterBar/>
               </Paper>
             </Grid>
             <Grid item xs={12} sm={8}>
@@ -54,6 +58,16 @@ handleCurrencyChange = currency => {
                         :
                     <PriceList apartaments={this.props} />
               }
+              </Paper>
+              <Paper>
+                {
+                  isFetching ?
+                    <div>Loading...</div>
+                    : 
+                    <Apartaments 
+                      apartaments={this.props}
+                    />
+                }
               </Paper>
             </Grid>
           </Grid>

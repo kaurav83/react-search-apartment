@@ -1,4 +1,8 @@
-import {RECEIVE_APARTAMENTS, REQUEST_APARTAMENTS, SELECT_CURRENCY} from './types';
+import {RECEIVE_APARTAMENTS,
+        REQUEST_APARTAMENTS, 
+        SELECT_CURRENCY,
+        FILTER_APARTAMENT
+        } from './types';
 import axios from 'axios';
 
 export const selectCurrency = (currency) => {
@@ -7,6 +11,13 @@ export const selectCurrency = (currency) => {
         currency
     };
 };  
+
+export const filterApartament = (selectedApartments) => {
+    return {
+        type: FILTER_APARTAMENT,
+        selectedApartments
+    }
+}
 
 export const getAppartament = () => dispatch => {
     dispatch({
