@@ -1,26 +1,14 @@
 import React, { Component } from 'react';
-import FilterItem from './FilterItem';
-import { connect } from 'react-redux';
-import { filterApartament } from '../../actions/appartamentActions';
-
-const CHECKBOXES = [
-    { id: "all" },
-    { id: 1 },
-    { id: 2 },
-    { id: 3 }
-];
+// import FilterItem from './FilterItem';
+// import { filterApartament } from '../../actions/appartamentActions';
 
 class FilterBar extends Component {
     
-    changeFilter = (selectedApartments) => {
-        this.props.filterApartament(selectedApartments);
-    }
     render() {
-        const { selectedApartments } = this.props;
 
         return (
             <div>
-                {
+                {/* {
                     CHECKBOXES.map(item => {
                         return (
                             <FilterItem
@@ -31,17 +19,17 @@ class FilterBar extends Component {
                             />
                         )
                     })
-                }
+                } */}
 
             </div>
         )
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        selectedApartments: state.selectedApartments
-    }
-}
+// const mapStateToProps = (state) => {
+//     return {
+//         selectedApartments: state.selectedApartments
+//     }
+// }
 
-export default connect(mapStateToProps, { filterApartament })(FilterBar);
+export default FilterBar;

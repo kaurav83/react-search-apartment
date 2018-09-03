@@ -1,9 +1,24 @@
 import {RECEIVE_APARTAMENTS,
         REQUEST_APARTAMENTS, 
         SELECT_CURRENCY,
-        FILTER_APARTAMENT
+        ADD_TOTAL_ROOM_FILTER,
+        REMOVE_TOTAL_ROOM_FILTER
         } from './types';
 import axios from 'axios';
+
+export const addRoomFilter = (totalRoomType) => {
+    return {
+        type: ADD_TOTAL_ROOM_FILTER,
+        payload: totalRoomType
+    };
+};
+
+export const removeRoomFilter = (totalRoomType) => {
+    return {
+        type: REMOVE_TOTAL_ROOM_FILTER,
+        payload: totalRoomType
+    }
+};
 
 export const selectCurrency = (currency) => {
     return {
@@ -11,13 +26,6 @@ export const selectCurrency = (currency) => {
         currency
     };
 };  
-
-export const filterApartament = (selectedApartments) => {
-    return {
-        type: FILTER_APARTAMENT,
-        selectedApartments
-    }
-}
 
 export const getAppartament = () => dispatch => {
     dispatch({
