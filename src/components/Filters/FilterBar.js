@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { addRoomFilter, removeRoomFilter } from '../actions/appartamentActions';
+import { addRoomFilter, removeRoomFilter } from '../../actions/appartamentActions';
 
-class Filter extends Component {
+class FilterBar extends Component {
 
     handleRoomFilter(e) {
         let totalRoomType = e.target.value;
@@ -35,4 +35,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, {addRoomFilter, removeRoomFilter})(Filter);
+export default connect(mapStateToProps, {addRoomFilter, removeRoomFilter})(FilterBar);

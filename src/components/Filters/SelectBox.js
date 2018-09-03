@@ -6,6 +6,7 @@ class SelectBox extends Component {
         
         return (
             <div>
+                <h2>ВАЛЮТА</h2>
                 <select
                     value={value}
                     onChange={e => onChange(e.target.value)}

@@ -9,46 +9,24 @@ import Grid from '@material-ui/core/Grid';
 import { connect } from 'react-redux';
 import { getAppartament, selectCurrency } from '../../actions/appartamentActions';
 
-import PriceList from '../Price/PriceList';
-import SelectBox from '../SelectBox';
-import FilterBar from '../FilterBar/FilterBar';
+// import PriceList from '../Price/PriceList';
+// import SelectBox from '../Filters/SelectBox';
+import Filters from '../Filters/Filters';
 // import FilterItem from '../FilterBar/FilterItem';
 import Apartaments from '../Apartaments/Apartaments';
 
-import Filter from '../Filter';
-import ApartamentsTest from '../Apartaments/ApartamentsTest';
-import getVisibleApartaments from '../../utils/getVisibleApartaments';
-
-const CURRENCY = [
-  "UAH",
-  "USD",
-  "EUR"
-];
-
-const CHECKBOXES = [
-  { id: "all" },
-  { id: 1 },
-  { id: 2 },
-  { id: 3 }
-];
 
 class Main extends Component {
   componentDidMount() {
     this.props.getAppartament();
   }
 
-  handleCurrencyChange = currency => {
-    this.props.selectCurrency(currency);
-  }
-
-  changeFilter = (selectedApartments) => {
-    this.props.filterApartament(selectedApartments);
-  }
+  // changeFilter = (selectedApartments) => {
+  //   this.props.filterApartament(selectedApartments);
+  // }
 
   render() {
-    const { isFetching, currency } = this.props;
-    
-    let arartamentsFiltering = getVisibleApartaments(this.props.appa.stuff, this.props.testFilter);
+    // const { isFetching } = this.props;
     return (
       <div className={layout.main}>
         <div className={layout.grid}>
@@ -59,50 +37,17 @@ class Main extends Component {
           >
             <Grid item xs={12} sm={4}>
               <Paper className={layout.paper}>
-                <h2>ВАЛЮТА</h2>
-                <SelectBox
-                  value={currency}
-                  options={CURRENCY}
-                  onChange={this.handleCurrencyChange}
+                <Filters 
+                  dataFilter={this.props}
                 />
-
-                <FilterBar />
-                <div>RAZDELITEL</div>
-                <Filter />
-                {
-                    // CHECKBOXES.map(item => {
-                    //   return (
-                    //     <FilterItem
-                    //       id={item.id}
-                    //       value={selectedApartments}
-                    //       key={item.id}
-                    //       onClick={this.changeFilter}
-                    //     />
-                    //   )
-                    // })
-
-                }
               </Paper>
             </Grid>
             <Grid item xs={12} sm={8}>
               <Paper className={layout.paper}>
-                {
-                  isFetching ?
-                    <div>Loading...</div>
-                    :
-                    <PriceList apartaments={this.props} />
-                }
-
-                {
-                  isFetching ?
-                    <div>Loading...</div>
-                    :
-                    <Apartaments apartaments={this.props} />
-                }
-                TEST RENDER
-                <ApartamentsTest arartamentsFiltering={arartamentsFiltering} />
+                <Apartaments 
+                  dataForApartaments={this.props}
+                />
               </Paper>
-              
             </Grid>
           </Grid>
         </div>

@@ -1,10 +1,10 @@
 import React from 'react';
 
-const ApartamentsTest = ({arartamentsFiltering}) => {
+const ApartamentsTest = ({arartamentsFiltered}) => {
     return (
         <div>
             {
-                arartamentsFiltering ? arartamentsFiltering.map(apartamentItem => {
+                arartamentsFiltered ? arartamentsFiltered.map(apartamentItem => {
                     return (
                         <div key={apartamentItem.id}>
                             <div>{apartamentItem.total_rooms}</div>
