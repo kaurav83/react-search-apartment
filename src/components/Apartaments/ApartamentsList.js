@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ApartamentsTest = ({arartamentsFiltered}) => {
+const ApartamentsList = ({arartamentsFiltered}) => {
     return (
         <div>
             {
@@ -16,4 +16,4 @@ const ApartamentsTest = ({arartamentsFiltered}) => {
     );
 };
 
-export default ApartamentsTest;
+export default ApartamentsList;

@@ -1,6 +1,7 @@
 import React from 'react';
 import FilterBar from './FilterBar';
 import SelectBox from './SelectBox';
+import FilterPrice from './FilterPrice';
 
 const CURRENCY = [
     "UAH",
@@ -21,6 +22,7 @@ const Filters = ({ dataFilter }) => {
                 onChange={handleCurrencyChange}
             />
             <FilterBar />
+            <FilterPrice />
         </div>
     );
 };

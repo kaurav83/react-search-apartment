@@ -1,7 +1,8 @@
 import React from 'react';
 import PriceList from '../Price/PriceList';
 import getVisibleApartaments from '../../utils/getVisibleApartaments';
-import ApartamentsTest from '../Apartaments/ApartamentsTest';
+import ApartamentsList from '../Apartaments/ApartamentsList';
+import PricesFiltered from '../PricesFiltered/PricesFiltered';
 
 const Apartaments = ({dataForApartaments}) => {
     let arartamentsFiltered = getVisibleApartaments(dataForApartaments.appa.stuff, dataForApartaments.testFilter);
@@ -14,7 +15,8 @@ const Apartaments = ({dataForApartaments}) => {
                     <PriceList apartaments={dataForApartaments} />
                 }
 
-            <ApartamentsTest arartamentsFiltered={arartamentsFiltered} />
+            <ApartamentsList arartamentsFiltered={arartamentsFiltered} />
+            <PricesFiltered />
         </div>
     );
 };

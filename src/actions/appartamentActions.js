@@ -2,9 +2,25 @@ import {RECEIVE_APARTAMENTS,
         REQUEST_APARTAMENTS, 
         SELECT_CURRENCY,
         ADD_TOTAL_ROOM_FILTER,
-        REMOVE_TOTAL_ROOM_FILTER
+        REMOVE_TOTAL_ROOM_FILTER,
+        START_PRICE,
+        END_PRICE
         } from './types';
 import axios from 'axios';
+
+export const startPrice = (startPrice) => {
+    return {
+        type: START_PRICE,
+        payload: startPrice
+    };
+}
+
+export const endPrice = (endPrice) => {
+    return {
+        type: END_PRICE,
+        payload: endPrice
+    };
+}
 
 export const addRoomFilter = (totalRoomType) => {
     return {

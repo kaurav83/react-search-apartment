@@ -2,31 +2,19 @@ import React, { Component } from 'react';
 import layout from './Layout.css';
 
 import PropTypes from 'prop-types';
-// import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-// import Price from '../Price';
 import { connect } from 'react-redux';
 import { getAppartament, selectCurrency } from '../../actions/appartamentActions';
-
-// import PriceList from '../Price/PriceList';
-// import SelectBox from '../Filters/SelectBox';
 import Filters from '../Filters/Filters';
-// import FilterItem from '../FilterBar/FilterItem';
 import Apartaments from '../Apartaments/Apartaments';
-
 
 class Main extends Component {
   componentDidMount() {
     this.props.getAppartament();
   }
 
-  // changeFilter = (selectedApartments) => {
-  //   this.props.filterApartament(selectedApartments);
-  // }
-
   render() {
-    // const { isFetching } = this.props;
     return (
       <div className={layout.main}>
         <div className={layout.grid}>
@@ -69,7 +57,6 @@ const mapStateToProps = (state) => {
     currency: state.currency,
 
     testFilter: state.testFilter,
-
   }
 }
 
