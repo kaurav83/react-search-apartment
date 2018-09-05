@@ -10,6 +10,7 @@ const CURRENCY = [
 ];
 
 const Filters = ({ dataFilter }) => {
+    
     const handleCurrencyChange = currency => {
         dataFilter.selectCurrency(currency);
     }

@@ -1,9 +1,10 @@
 import React from 'react';
 
-const PriceFilteredItem = (props) => {
+const PriceFilteredItem = ({name}) => {
+    console.log(name)
     return (
         <div>
-            {props.price}
+            {name}
         </div>
     );
 };

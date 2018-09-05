@@ -17,7 +17,6 @@ class FilterPrice extends Component {
     }
 
   render() {
-      console.log(this.props, 'FILTERpRICE')
     return (
       <div>
         <input 

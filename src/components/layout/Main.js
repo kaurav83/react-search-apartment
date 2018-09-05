@@ -7,7 +7,8 @@ import Grid from '@material-ui/core/Grid';
 import { connect } from 'react-redux';
 import { getAppartament, selectCurrency } from '../../actions/appartamentActions';
 import Filters from '../Filters/Filters';
-import Apartaments from '../Apartaments/Apartaments';
+// import Apartaments from '../Apartaments/Apartaments';
+import ApartamentsTest from '../Apartaments/ApartamentsTest';
 
 class Main extends Component {
   componentDidMount() {
@@ -32,9 +33,10 @@ class Main extends Component {
             </Grid>
             <Grid item xs={12} sm={8}>
               <Paper className={layout.paper}>
-                <Apartaments 
+                {/* <Apartaments 
                   dataForApartaments={this.props}
-                />
+                /> */}
+                <ApartamentsTest dataForApartaments={this.props}/>
               </Paper>
             </Grid>
           </Grid>
@@ -54,7 +56,6 @@ const mapStateToProps = (state) => {
   return {
     appa: state.appartament,
     isFetching: state.appartament.isFetching,
-    currency: state.currency,
 
     testFilter: state.testFilter,
   }
