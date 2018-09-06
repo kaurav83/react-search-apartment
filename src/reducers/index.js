@@ -1,12 +1,12 @@
 import {combineReducers} from 'redux';
 import appartamentReducer from './appartamentReducer';
 import currencyReducer from './currencyReducer';
-import visibilityFilter from './testFilterRefucer';
+import visibilityFilterTotalRoom from './visibilityFilterTotalRoom';
 import priceFilterReducer from './priceFilterReducer'
 
 export default combineReducers({
     appartament: appartamentReducer,
     currency: currencyReducer,
-    testFilter: visibilityFilter,
+    visibileFilterTotalRoom: visibilityFilterTotalRoom,
     priceFilter: priceFilterReducer
 });

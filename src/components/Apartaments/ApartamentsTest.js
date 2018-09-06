@@ -9,7 +9,7 @@ class ApartamentsTest extends Component {
     
   render() {
     // let list  = selectorForPriceFilter(this.props.dataForApartaments.appa.stuff, this.props.dataForApartaments.priceFilter)
-    let arartamentsFiltered = getVisibleApartaments(this.props.dataForApartaments.appa.stuff, this.props.dataForApartaments.testFilter);
+    let arartamentsFiltered = getVisibleApartaments(this.props.dataForApartaments.appa.stuff, this.props.dataForApartaments.visibileFilterTotalRoom);
     
     return (
       <div>

@@ -2,7 +2,7 @@ import {ADD_TOTAL_ROOM_FILTER, REMOVE_TOTAL_ROOM_FILTER} from "../actions/types"
 
 const initialState = {totalRoomFilter: []};
 
-const visibilityFilter = (state = initialState, action) => {
+const visibilityFilterTotalRoom = (state = initialState, action) => {
     switch (action.type) {
         case ADD_TOTAL_ROOM_FILTER :
             return {
@@ -18,4 +18,4 @@ const visibilityFilter = (state = initialState, action) => {
     }
 }
 
-export default visibilityFilter;
+export default visibilityFilterTotalRoom;
