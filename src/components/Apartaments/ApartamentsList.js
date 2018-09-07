@@ -1,21 +1,19 @@
 import React from 'react';
 import ApartamentData from './ApartamentData';
 
-const ApartamentsList = ({arartamentsFiltered, newList, currency}) => {
-    
+const ApartamentsList = (props) => {
+    // console.log(props, 'AL')
     return (
         <div>
             {
-                arartamentsFiltered ? arartamentsFiltered.map((apartamentItem, index) => {
+                props.arartamentsFiltered ? props.arartamentsFiltered.map((apartamentItem) => {
                     
                     return (
                         
                             <div key={apartamentItem.id}>
                                 <ApartamentData 
-                                    apartamentItem={apartamentItem.total_rooms} 
-                                    apartamentID={apartamentItem.id}
-                                    newList={newList}
-                                    currency={currency}
+                                    {...apartamentItem}
+                                    currency={props.currency}
                                 />   
                             </div>                     
                     )

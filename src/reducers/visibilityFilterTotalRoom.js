@@ -12,10 +12,11 @@ const visibilityFilterTotalRoom = (state = initialState, action) => {
             const newTotalRoomFilter = state.totalRoomFilter.filter((item) => item !== action.payload);
             return {
                 totalRoomFilter: newTotalRoomFilter
-            }
+            };
         default :
             return state;
     }
 }
 
 export default visibilityFilterTotalRoom;
+

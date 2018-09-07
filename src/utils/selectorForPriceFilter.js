@@ -7,8 +7,3 @@ export default (pricesList, {startPrice, endPrice}) => {
     })
      
 };
-
-// const USD = price.currency === "USD" ? `${Math.floor(price.price/28)} $` : null;
-//                     const EUR = price.currency === "EUR" ? `${Math.floor(price.price/33)} €` : null;
-
-// currencyValue === "USD" ? `${Math.floor(item.price/28)} $` : null

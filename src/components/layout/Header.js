@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import layout from './Layout.css';
+import './Layout.css';
 
 class Header extends Component {
   render() {
     return (
-      <div className={layout.header}>
+      <div className="header">
         LOGO
       </div>
     )

@@ -2,23 +2,21 @@ import React, { Component } from 'react';
 import ApartamentsList from './ApartamentsList';
 import getVisibleApartaments from '../../utils/getVisibleApartaments';
 import {connect} from 'react-redux';
-// import PriceList from '../Price/PriceList';
-import selectorForPriceFilter from '../../utils/selectorForPriceFilter'
 
 class ApartamentsTest extends Component {
     
   render() {
-    // let list  = selectorForPriceFilter(this.props.dataForApartaments.appa.stuff, this.props.dataForApartaments.priceFilter)
-    let arartamentsFiltered = getVisibleApartaments(this.props.dataForApartaments.appa.stuff, this.props.dataForApartaments.visibileFilterTotalRoom);
+    let arartamentsFiltered = getVisibleApartaments(
+      this.props.dataForApartaments.pricesList, 
+      this.props.dataForApartaments.visibileFilterTotalRoom
+    );
     
     return (
       <div>
         <ApartamentsList 
             arartamentsFiltered={arartamentsFiltered} 
-            newList={this.props.pricesList}
             currency={this.props.currency}
         />
-        {/* <PriceList apartaments={this.props.dataForApartaments} /> */}
       </div>
     )
   }
@@ -26,7 +24,6 @@ class ApartamentsTest extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        pricesList: selectorForPriceFilter(state.appartament.stuff, state.priceFilter),
         currency: state.currency
     };
 };

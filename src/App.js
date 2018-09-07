@@ -7,14 +7,14 @@ import Header from './components/layout/Header';
 import Main from './components/layout/Main';
 import Footer from './components/layout/Footer';
 
-import layout from './components/layout/Layout.css';
+import './components/layout/Layout.css';
 
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
         <Router>
-          <div className={layout.wrapper}>
+          <div className="wrapper">
             <Header />
             <Route exact path="/" component={Main} />
             <Footer />

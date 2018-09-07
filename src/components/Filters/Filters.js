@@ -2,6 +2,7 @@ import React from 'react';
 import FilterBar from './FilterBar';
 import SelectBox from './SelectBox';
 import FilterPrice from './FilterPrice';
+import StarRating from '../UI/StarRating';
 
 const CURRENCY = [
     "UAH",
@@ -24,6 +25,7 @@ const Filters = ({ dataFilter }) => {
             />
             <FilterBar />
             <FilterPrice />
+            <StarRating />
         </div>
     );
 };

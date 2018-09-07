@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import layout from './Layout.css';
+import './Layout.css';
 
 import PropTypes from 'prop-types';
 import Paper from '@material-ui/core/Paper';
@@ -9,6 +9,7 @@ import { getAppartament, selectCurrency } from '../../actions/appartamentActions
 import Filters from '../Filters/Filters';
 // import Apartaments from '../Apartaments/Apartaments';
 import ApartamentsTest from '../Apartaments/ApartamentsTest';
+import selectorForPriceFilter from '../../utils/selectorForPriceFilter';
 
 class Main extends Component {
   componentDidMount() {
@@ -17,22 +18,22 @@ class Main extends Component {
 
   render() {
     return (
-      <div className={layout.main}>
-        <div className={layout.grid}>
+      <div className="main">
+        <div className="grid">
           <Grid
             container
             spacing={24}
             justify="center"
           >
             <Grid item xs={12} sm={4}>
-              <Paper className={layout.paper}>
+              <Paper className="paper">
                 <Filters 
                   dataFilter={this.props}
                 />
               </Paper>
             </Grid>
             <Grid item xs={12} sm={8}>
-              <Paper className={layout.paper}>
+              <Paper className="paper">
                 {/* <Apartaments 
                   dataForApartaments={this.props}
                 /> */}
@@ -56,8 +57,9 @@ const mapStateToProps = (state) => {
   return {
     appa: state.appartament,
     isFetching: state.appartament.isFetching,
-
+    
     visibileFilterTotalRoom: state.visibileFilterTotalRoom,
+    pricesList: selectorForPriceFilter(state.appartament.stuff, state.priceFilter),
   }
 }
 
