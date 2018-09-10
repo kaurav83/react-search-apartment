@@ -11,6 +11,7 @@ import {RECEIVE_APARTAMENTS,
 import axios from 'axios';
 
 export const addRaitingFilter = (raitingType) => {
+    // console.log(raitingType, 'add')
     return {
         type: ADD_RAITING_FILTER,
         payload: raitingType
@@ -18,6 +19,7 @@ export const addRaitingFilter = (raitingType) => {
 };
 
 export const removeRaitingFilter = (raitingType) => {
+    console.log(raitingType, 'remove')
     return {
         type: REMOVE_RAITING_FILTER,
         payload: raitingType
@@ -41,6 +43,7 @@ export const endPrice = (endPrice) => {
 }
 
 export const addRoomFilter = (totalRoomType) => {
+    // console.log(totalRoomType, 'add')
     return {
         type: ADD_TOTAL_ROOM_FILTER,
         payload: totalRoomType
@@ -48,6 +51,7 @@ export const addRoomFilter = (totalRoomType) => {
 };
 
 export const removeRoomFilter = (totalRoomType) => {
+    console.log(totalRoomType, 'remove')
     return {
         type: REMOVE_TOTAL_ROOM_FILTER,
         payload: totalRoomType

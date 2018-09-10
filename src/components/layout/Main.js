@@ -59,6 +59,7 @@ const mapStateToProps = (state) => {
     isFetching: state.appartament.isFetching,
     
     visibileFilterTotalRoom: state.visibileFilterTotalRoom,
+    filterRaiting: state.filterRaiting,
     pricesList: selectorForPriceFilter(state.appartament.stuff, state.priceFilter),
   }
 }
