@@ -1,4 +1,8 @@
-import {ADD_TOTAL_ROOM_FILTER, REMOVE_TOTAL_ROOM_FILTER} from "../actions/types";
+import {ADD_TOTAL_ROOM_FILTER, 
+        REMOVE_TOTAL_ROOM_FILTER,
+        ALL_ROOMS_FILTER,
+        REMOVE_ALL_ROOMS_FILER
+    } from "../actions/types";
 
 const initialState = {totalRoomFilter: []};
 
@@ -12,6 +16,15 @@ const visibilityFilterTotalRoom = (state = initialState, action) => {
             const newTotalRoomFilter = state.totalRoomFilter.filter((item) => item !== action.payload);
             return {
                 totalRoomFilter: newTotalRoomFilter
+            };
+        case ALL_ROOMS_FILTER :
+            return {
+                ...state, totalRoomFilter: [...state.totalRoomFilter, action.payload]
+            };
+        case REMOVE_ALL_ROOMS_FILER :
+            const newAllRoomFilter = state.totalRoomFilter.filter((item) => item !== action.payload);
+            return {
+                totalRoomFilter: newAllRoomFilter
             };
         default :
             return state;

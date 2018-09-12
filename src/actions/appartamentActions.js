@@ -6,28 +6,19 @@ import {RECEIVE_APARTAMENTS,
         START_PRICE,
         END_PRICE,
         ADD_RAITING_FILTER,
-        // REMOVE_RAITING_FILTER
+        ALL_ROOMS_FILTER,
+        REMOVE_ALL_ROOMS_FILER
         } from './types';
 import axios from 'axios';
 
 export const addRaitingFilter = (raitingType) => {
-    // console.log(raitingType, 'add')
     return {
         type: ADD_RAITING_FILTER,
         payload: raitingType
     };
 };
 
-// export const removeRaitingFilter = (raitingType) => {
-//     console.log(raitingType, 'remove')
-//     return {
-//         type: REMOVE_RAITING_FILTER,
-//         payload: raitingType
-//     };
-// };
-
 export const startPrice = (startPrice) => {
-    // console.log(startPrice, "in startPrice")
     return {
         type: START_PRICE,
         payload: startPrice
@@ -35,7 +26,6 @@ export const startPrice = (startPrice) => {
 }
 
 export const endPrice = (endPrice) => {
-    // console.log(endPrice, "in endPrice")
     return {
         type: END_PRICE,
         payload: endPrice
@@ -43,7 +33,6 @@ export const endPrice = (endPrice) => {
 }
 
 export const addRoomFilter = (totalRoomType) => {
-    // console.log(totalRoomType, 'add')
     return {
         type: ADD_TOTAL_ROOM_FILTER,
         payload: totalRoomType
@@ -51,15 +40,27 @@ export const addRoomFilter = (totalRoomType) => {
 };
 
 export const removeRoomFilter = (totalRoomType) => {
-    console.log(totalRoomType, 'remove')
     return {
         type: REMOVE_TOTAL_ROOM_FILTER,
         payload: totalRoomType
-    }
+    };
+};
+
+export const addAllRoomsFilter = (allRooms) => {
+    return {
+        type: ALL_ROOMS_FILTER,
+        payload: allRooms
+    };
+};
+
+export const removeAllRoomsFilter = (allRooms) => {
+    return {
+        type: REMOVE_ALL_ROOMS_FILER,
+        payload: allRooms
+    };
 };
 
 export const selectCurrency = (currency) => {
-    // console.log(currency, "in selectCurrency")
     return {
         type: SELECT_CURRENCY,
         currency

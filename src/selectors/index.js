@@ -17,8 +17,7 @@ export const getFilterRaiting = (apartamentsValue, filter_rating) => {
 };
 
 export const getVisibleApartaments = (apartamentsValue, filter) => {
-    // const ALL = filter.totalRoomFilter.filter(word => word === "ALL");
-    if (filter.totalRoomFilter.length === 0) {
+    if (filter.totalRoomFilter.length === 0 || filter.totalRoomFilter.find((elem) => elem === "all" )) {
         return apartamentsValue;
     } else if (filter.totalRoomFilter.length !== 0) {
         let filteredApartaments = [];
@@ -41,9 +40,3 @@ export const filteredPrices = (pricesList, { startPrice, endPrice }) => {
     })
 
 };
-
-
-// export const getShareCollection = createSelector(
-//     getFilterRaiting,
-//     getVisibleApartaments
-// )

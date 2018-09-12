@@ -1,6 +1,6 @@
 import React from 'react';
 import FilterBar from './FilterBar';
-import SelectBox from './SelectBox';
+import TabSet from './TabSet';
 import FilterPrice from './FilterPrice';
 import StarRating from '../UI/StarRating';
 
@@ -10,19 +10,19 @@ const CURRENCY = [
     "EUR"
 ];
 
-const Filters = ({ dataFilter }) => {
+const Filters = (props) => {
     
-    const handleCurrencyChange = currency => {
-        dataFilter.selectCurrency(currency);
-    }
+    // const handleCurrencyChange = currency => {
+    //     dataFilter.selectCurrency(currency);
+    // }
 
     return (
         <div>
-            <SelectBox
-                value={dataFilter.currency}
-                options={CURRENCY}
-                onChange={handleCurrencyChange}
-            />
+            <TabSet>
+                <div label="UAH"></div>
+                <div label="USD"></div>
+                <div label="EUR"></div>
+            </TabSet>
             <FilterBar />
             <FilterPrice />
             <StarRating />

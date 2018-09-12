@@ -16,6 +16,7 @@ class Main extends Component {
   }
 
   render() {
+    console.log(this.props, 'Form Main')
     let arartamentsFiltered = getVisibleApartaments(
       this.props.pricesList, 
       this.props.visibileFilterTotalRoom
