@@ -6,7 +6,7 @@ import {RECEIVE_APARTAMENTS,
         START_PRICE,
         END_PRICE,
         ADD_RAITING_FILTER,
-        REMOVE_RAITING_FILTER
+        // REMOVE_RAITING_FILTER
         } from './types';
 import axios from 'axios';
 
@@ -18,13 +18,13 @@ export const addRaitingFilter = (raitingType) => {
     };
 };
 
-export const removeRaitingFilter = (raitingType) => {
-    console.log(raitingType, 'remove')
-    return {
-        type: REMOVE_RAITING_FILTER,
-        payload: raitingType
-    };
-};
+// export const removeRaitingFilter = (raitingType) => {
+//     console.log(raitingType, 'remove')
+//     return {
+//         type: REMOVE_RAITING_FILTER,
+//         payload: raitingType
+//     };
+// };
 
 export const startPrice = (startPrice) => {
     // console.log(startPrice, "in startPrice")

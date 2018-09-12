@@ -20,6 +20,7 @@ class FilterBar extends Component {
                 <h3>Filter Options</h3>
                 <div className="filter">
                     <h4>Price</h4>
+                    {/* <input type="checkbox" value="all" onClick={(e) => this.handleRoomFilter(e)} />1 комната<br /> */}
                     <input type="checkbox" value="1" onClick={(e) => this.handleRoomFilter(e)} />1 комната<br />
                     <input type="checkbox" value="2" onClick={(e) => this.handleRoomFilter(e)} />2 комнаты<br />
                     <input type="checkbox" value="3" onClick={(e) => this.handleRoomFilter(e)} />3 комнаты<br />

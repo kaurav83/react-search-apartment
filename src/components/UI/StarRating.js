@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 // import PropTypes from 'prop-types';
 import Star from './Star';
 import {addRaitingFilter, 
-        removeRaitingFilter
+        // removeRaitingFilter
       } from '../../actions/appartamentActions';
 
 class StarRating extends Component {
@@ -17,25 +17,15 @@ class StarRating extends Component {
     }
       
     handleRating(starsSelected) {
-      console.log(starsSelected)
         this.setState({starsSelected})
         if (starsSelected) {
-          
           this.props.addRaitingFilter(starsSelected);
-        } else {
-          this.props.removeRaitingFilter(starsSelected);
-        }
-      // if (starsSelected + 1) {
-        
-      // } else {
-      //   this.props.removeRaitingFilter(starsSelected);
-      // }      
+        } 
       }
       
       render() {
         let totalStars = 5;
         const {starsSelected} = this.state;
-        console.log(starsSelected, 'starsSelected')
         return (
           <div className="star-rating" style={{display: "flex", justifyContent: "center"}}>
             {[...Array(totalStars)].map((n, i) =>
@@ -67,6 +57,6 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps, {addRaitingFilter, 
-                                          removeRaitingFilter
+                                          // removeRaitingFilter
                                         })(StarRating);
 

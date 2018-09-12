@@ -7,9 +7,8 @@ import Grid from '@material-ui/core/Grid';
 import { connect } from 'react-redux';
 import { getAppartament, selectCurrency } from '../../actions/appartamentActions';
 import Filters from '../Filters/Filters';
-// import Apartaments from '../Apartaments/Apartaments';
 import ApartamentsTest from '../Apartaments/ApartamentsTest';
-import selectorForPriceFilter from '../../utils/selectorForPriceFilter';
+import { getVisibleApartaments, filteredPrices} from '../../selectors';
 
 class Main extends Component {
   componentDidMount() {
@@ -17,6 +16,10 @@ class Main extends Component {
   }
 
   render() {
+    let arartamentsFiltered = getVisibleApartaments(
+      this.props.pricesList, 
+      this.props.visibileFilterTotalRoom
+    );
     return (
       <div className="main">
         <div className="grid">
@@ -34,10 +37,7 @@ class Main extends Component {
             </Grid>
             <Grid item xs={12} sm={8}>
               <Paper className="paper">
-                {/* <Apartaments 
-                  dataForApartaments={this.props}
-                /> */}
-                <ApartamentsTest dataForApartaments={this.props}/>
+                <ApartamentsTest dataForApartaments={arartamentsFiltered}/>
               </Paper>
             </Grid>
           </Grid>
@@ -60,7 +60,7 @@ const mapStateToProps = (state) => {
     
     visibileFilterTotalRoom: state.visibileFilterTotalRoom,
     filterRaiting: state.filterRaiting,
-    pricesList: selectorForPriceFilter(state.appartament.stuff, state.priceFilter),
+    pricesList: filteredPrices(state.appartament.stuff, state.priceFilter),
   }
 }
 
