@@ -18,7 +18,7 @@ class TabSet extends Component {
 
     render() {
         const { handleCurrencyTab, props: { children }, state: { activeTab }} = this;
-        console.log(this, 'this')
+        
         return (
             <div className="tab-list">
                 {

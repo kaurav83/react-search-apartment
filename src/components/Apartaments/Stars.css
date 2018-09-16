@@ -1,0 +1,11 @@
+.stars:before {
+    content: "★";
+    font-size: 2rem;
+    margin: 0 .3rem;
+    color: #ccc;
+  }
+
+  .stars.select:before {
+    content: "★";
+    color: #2196f3;
+  }

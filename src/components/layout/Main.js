@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 import { getAppartament, selectCurrency } from '../../actions/appartamentActions';
 import Filters from '../Filters/Filters';
 import ApartamentsTest from '../Apartaments/ApartamentsTest';
-import { getVisibleApartaments, filteredPrices} from '../../selectors';
+import { getVisibleApartaments, filteredPrices } from '../../selectors';
 
 class Main extends Component {
   componentDidMount() {
@@ -16,9 +16,8 @@ class Main extends Component {
   }
 
   render() {
-    console.log(this.props, 'Form Main')
     let arartamentsFiltered = getVisibleApartaments(
-      this.props.pricesList, 
+      this.props.pricesList,
       this.props.visibileFilterTotalRoom
     );
     return (
@@ -26,19 +25,24 @@ class Main extends Component {
         <div className="grid">
           <Grid
             container
-            spacing={24}
+            spacing={40}
             justify="center"
           >
-            <Grid item xs={12} sm={4}>
-              <Paper className="paper">
-                <Filters 
+            <Grid item xs={12} sm={4} md={4}>
+              <Paper 
+                style={{ 
+                  color: "#999", 
+                  backgroundColor: "#fafafa", 
+                  minWidth: "15rem",
+                }} className="paper">
+                <Filters
                   dataFilter={this.props}
                 />
               </Paper>
             </Grid>
-            <Grid item xs={12} sm={8}>
-              <Paper className="paper">
-                <ApartamentsTest dataForApartaments={arartamentsFiltered}/>
+            <Grid item xs={12} sm={8} md={8}>
+              <Paper style={{ color: "#999", backgroundColor: "rgba(250, 250, 250, .8)", }} className="paper">
+                <ApartamentsTest dataForApartaments={arartamentsFiltered} />
               </Paper>
             </Grid>
           </Grid>
@@ -58,7 +62,7 @@ const mapStateToProps = (state) => {
   return {
     appa: state.appartament,
     isFetching: state.appartament.isFetching,
-    
+
     visibileFilterTotalRoom: state.visibileFilterTotalRoom,
     filterRaiting: state.filterRaiting,
     pricesList: filteredPrices(state.appartament.stuff, state.priceFilter),

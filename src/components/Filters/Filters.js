@@ -3,21 +3,14 @@ import FilterBar from './FilterBar';
 import TabSet from './TabSet';
 import FilterPrice from './FilterPrice';
 import StarRating from '../UI/StarRating';
-
-const CURRENCY = [
-    "UAH",
-    "USD",
-    "EUR"
-];
+import './Filters.css';
+import FilterList from '@material-ui/icons/FilterList';
 
 const Filters = (props) => {
-    
-    // const handleCurrencyChange = currency => {
-    //     dataFilter.selectCurrency(currency);
-    // }
 
     return (
-        <div>
+        <div className="filters">
+            <div><FilterList /></div>
             <TabSet>
                 <div label="UAH"></div>
                 <div label="USD"></div>

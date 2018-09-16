@@ -1,6 +1,15 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
-import {startPrice, endPrice} from '../../actions/appartamentActions';
+import { connect } from 'react-redux';
+import { startPrice, endPrice } from '../../actions/appartamentActions';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+import lightBlue from '@material-ui/core/colors/lightBlue';
+
+const theme = createMuiTheme({
+    palette: {
+        primary: lightBlue,
+    },
+});
 
 class FilterPrice extends Component {
     constructor(props) {
@@ -16,25 +25,31 @@ class FilterPrice extends Component {
         this.props.dispatch(endPrice(to));
     }
 
-  render() {
-    return (
-      <div>
-        <input 
-            type="number" 
-            placeholder="from" 
-            onChange={this.filterPrice} 
-            ref={el => this.startPrice = el}
-        />
-        {' '}
-        <input 
-            type="number" 
-            placeholder="to" 
-            onChange={this.filterPrice} 
-            ref={el => this.endPrice = el}
-        />
-      </div>
-    )
-  }
+    render() {
+        return (
+            <div className="filter-price">
+                <MuiThemeProvider theme={theme}>
+                    <TextField
+                        label="От"
+                        type="number"
+                        onChange={this.filterPrice}
+                        inputRef={el => this.startPrice = el}
+                        style={{maxWidth: "7rem", margin: "0 .5rem"}}
+                    />
+                </MuiThemeProvider>
+                {' '}
+                <MuiThemeProvider theme={theme}>
+                    <TextField
+                        label="До"
+                        type="number"
+                        onChange={this.filterPrice}
+                        inputRef={el => this.endPrice = el}
+                        style={{maxWidth: "7rem", margin: "0 .5rem"}}
+                    />
+                </MuiThemeProvider>
+            </div>
+        )
+    }
 }
 
 const mapStateToProps = (state) => {
