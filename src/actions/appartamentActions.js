@@ -72,7 +72,7 @@ export const getAppartament = () => dispatch => {
         type: REQUEST_APARTAMENTS
     })
 
-    axios.get(`http://demo4452328.mockable.io/property`)
+    axios.get(`https://demo4452328.mockable.io/property`)
     .then(response => 
         dispatch({
             type: RECEIVE_APARTAMENTS,
