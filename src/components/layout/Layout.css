@@ -32,6 +32,7 @@
 @media screen and (min-width: 320px) {
     .grid {
         margin: 0;
+        overflow: hidden;
     }
 }
 
@@ -43,4 +44,47 @@
 
 .paper {
     padding: 1rem;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+}
+
+.logo-content {
+    position: relative;
+    margin: 2rem 0;
+    min-width: 20rem;
+    text-align: center;
+}
+
+.logo {
+    width: 15rem;
+    height: 5rem;
+}
+
+.logo-text {
+    margin: 0;
+    color: #fff;
+    font-size: 3.4rem;
+    letter-spacing: .1rem;
+    position: absolute;
+    top: 9px;
+    transform: translate(14%, 71%);
+}
+
+.footer {
+    padding: 1rem;
+    background: #424242;
+    margin-top: 1rem;
+}
+
+.copyright {
+    text-align: center;
+    color: #fff;
+    font-weight: 100;
+}
+
+.copyright-icon {
+    font-size: 1.5rem;
 }

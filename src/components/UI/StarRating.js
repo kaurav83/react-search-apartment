@@ -31,15 +31,17 @@ class StarRating extends Component {
     const { starsSelected } = this.state;
     
     return (
-      <div className="star-rating" style={{ display: "flex" }}>
-        {[...Array(totalStars)].map((n, i) =>
+      <div style={{marginLeft: "1rem"}}>
+        <h4 style={{ margin: "0", marginTop: "1rem", marginBottom: ".5rem" }}>РЕЙТИНГ:</h4>
+        <div className="star-rating" style={{ display: "flex" }}>
+          {[...Array(totalStars)].map((n, i) =>
           <Star key={i}
             selected={i < starsSelected}
             // onMouseOver={this.setRating.bind(this, i)}
             onClick={() => this.handleRating(i + 1)}
           />
         )}
-
+        </div>
       </div>
     )
   }

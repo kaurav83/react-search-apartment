@@ -31,6 +31,10 @@ const styles = theme => ({
         flexDirection: "column",
         justifyContent: "space-between",
         width: "100%",
+
+        [theme.breakpoints.down('xs')]: {
+            marginLeft: '0',
+        },
     },
     description: {
         fontSize: "1.2rem",
@@ -53,7 +57,7 @@ const styles = theme => ({
         display: "flex",
         padding: 0,
         flex: "auto",
-        marginRight: "6rem",
+        // marginRight: "6rem",
     },
     icon: {
         fontSize: "1.4rem",
@@ -63,6 +67,22 @@ const styles = theme => ({
     pullData_paragraph: {
         display: "flex",
         marginLeft: "auto",
+    },
+    mediaBlock: {
+        [theme.breakpoints.down('md')]: {
+            margin: "0 auto"
+        },
+    },
+    buttonPrice: {
+        padding: "1rem 1.4rem",
+        borderRadius: "0",
+        minWidth: "12rem",
+        display: "inline-block",
+        marginLeft: "auto",
+
+        [theme.breakpoints.down('xs')]: {
+            minWidth: "100%",
+        }
     }
 });
 
@@ -85,14 +105,14 @@ const ApartamentData = (props) => {
     return (
         <Card className={classes.card}>
             <Grid container>
-                <Grid>
+                <Grid className={classes.mediaBlock}>
                     <Grid sm={12} md xl={4} item>
                         <CardMedia
                             className={classes.cover}
                             image={props.apartamentItem.images[0]}
                             title="apartament"
                         />
-                        <div style={{ display: "flex", justifyContent: "center", marginTop: "1rem" }}>
+                        <div style={{ display: "flex", justifyContent: "center", margin: "1rem 0" }}>
                             {
                                 [...Array(totalStars)].map((n, i) => {
                                     return (
@@ -131,13 +151,7 @@ const ApartamentData = (props) => {
                         <Button
                             variant="contained"
                             color="primary"
-                            style={{
-                                padding: "1rem 1.4rem",
-                                borderRadius: "0",
-                                minWidth: "12rem",
-                                display: "inline-block",
-                                marginLeft: "auto",
-                            }}
+                            className={classes.buttonPrice}
                         >
                             <Typography
                                 color="textPrimary"

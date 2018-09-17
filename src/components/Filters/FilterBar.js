@@ -9,6 +9,7 @@ import {
 import Checkbox from '@material-ui/core/Checkbox';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import lightBlue from '@material-ui/core/colors/lightBlue';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 const theme = createMuiTheme({
     palette: {
@@ -40,54 +41,64 @@ class FilterBar extends Component {
 
         return (
             <div>
-                <h3>Filter Options</h3>
-                <div>
-                    <h4>Price</h4>
-                    <div style={{display: "flex", alignItems: "center", margin: ".5rem 0"}}>
+                <h4 style={{ margin: "0", marginTop: "1rem", marginLeft: "1rem" }}>КОЛИЧЕСТВО КОМНАТ:</h4>
+                <div style={{marginLeft: "1rem"}}>
+                    <div style={{ display: "flex", alignItems: "center", margin: ".5rem 0" }}>
                         <MuiThemeProvider theme={theme}>
-                            <Checkbox
-                                color="primary"
-                                value="all"
-                                onClick={(e) => this.handleAllRoomsFilter(e)}
-                                id="all"
+                            <FormControlLabel
+                                control={
+                                    <Checkbox
+                                        color="primary"
+                                        value="all"
+                                        onClick={(e) => this.handleAllRoomsFilter(e)}
+                                    />
+                                }
+                                label="Все"
                             />
-                            <label htmlFor="all">Все</label>
                         </MuiThemeProvider>
 
                     </div>
-                    <div style={{display: "flex", alignItems: "center", margin: ".5rem 0"}}>
+                    <div style={{ display: "flex", alignItems: "center", margin: ".5rem 0" }}>
                         <MuiThemeProvider theme={theme}>
-                            <Checkbox
-                                color="primary"
-                                value="1"
-                                onClick={(e) => this.handleRoomFilter(e)}
-                                id="one"
+                            <FormControlLabel
+                                control={
+                                    <Checkbox
+                                        color="primary"
+                                        value="1"
+                                        onClick={(e) => this.handleRoomFilter(e)}
+                                    />
+                                }
+                                label="1 комната"
                             />
-                            <label htmlFor="one">1 комната</label>
+                        </MuiThemeProvider>
+                    </div>
+                    <div style={{ display: "flex", alignItems: "center", margin: ".5rem 0" }}>
+                        <MuiThemeProvider theme={theme}>
+                            <FormControlLabel
+                                control={
+                                    <Checkbox
+                                        color="primary"
+                                        value="2"
+                                        onClick={(e) => this.handleRoomFilter(e)}
+                                    />
+                                }
+                                label="2 комнаты"
+                            />
                         </MuiThemeProvider>
 
                     </div>
-                    <div style={{display: "flex", alignItems: "center", margin: ".5rem 0"}}>
+                    <div style={{ display: "flex", alignItems: "center", margin: ".5rem 0" }}>
                         <MuiThemeProvider theme={theme}>
-                            <Checkbox
-                                color="primary"
-                                value="2"
-                                onClick={(e) => this.handleRoomFilter(e)}
-                                id="two"
+                            <FormControlLabel
+                                control={
+                                    <Checkbox
+                                        color="primary"
+                                        value="3"
+                                        onClick={(e) => this.handleRoomFilter(e)}
+                                    />
+                                }
+                                label="3 комнаты"
                             />
-                            <label htmlFor="two">2 комнаты</label>
-                        </MuiThemeProvider>
-
-                    </div>
-                    <div style={{display: "flex", alignItems: "center", margin: ".5rem 0"}}>
-                        <MuiThemeProvider theme={theme}>
-                            <Checkbox
-                                color="primary"
-                                value="3"
-                                onClick={(e) => this.handleRoomFilter(e)}
-                                id="three"
-                            />
-                            <label htmlFor="three">3 комнаты</label>
                         </MuiThemeProvider>
 
                     </div>

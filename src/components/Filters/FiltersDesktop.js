@@ -4,13 +4,11 @@ import TabSet from './TabSet';
 import FilterPrice from './FilterPrice';
 import StarRating from '../UI/StarRating';
 import './Filters.css';
-import FilterList from '@material-ui/icons/FilterList';
+import List from "@material-ui/core/List";
 
-const Filters = (props) => {
-
+const FiltersDesktop = () => {
     return (
-        <div className="filters">
-            <div><FilterList /></div>
+        <div>
             <TabSet>
                 <div label="UAH"></div>
                 <div label="USD"></div>
@@ -18,9 +16,11 @@ const Filters = (props) => {
             </TabSet>
             <FilterBar />
             <FilterPrice />
-            <StarRating />
+            <List>
+                <StarRating />
+            </List>
         </div>
     );
 };
 
-export default Filters;
+export default FiltersDesktop;

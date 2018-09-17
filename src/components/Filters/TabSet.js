@@ -17,24 +17,27 @@ class TabSet extends Component {
     };
 
     render() {
-        const { handleCurrencyTab, props: { children }, state: { activeTab }} = this;
-        
-        return (
-            <div className="tab-list">
-                {
-                    children.map(child => {
-                        const { label } = child.props;
+        const { handleCurrencyTab, props: { children }, state: { activeTab } } = this;
 
-                        return (
-                            <Tab
-                                activeTab={activeTab}
-                                key={label}
-                                label={label}
-                                onClick={handleCurrencyTab}
-                            />
-                        )
-                    })
-                }
+        return (
+            <div style={{marginLeft: "1rem"}}>
+                <h4 style={{ margin: "0", marginTop: "1rem", marginBottom: ".5rem" }}>ВАЛЮТА:</h4>
+                <div className="tab-list">
+                    {
+                        children.map(child => {
+                            const { label } = child.props;
+
+                            return (
+                                <Tab
+                                    activeTab={activeTab}
+                                    key={label}
+                                    label={label}
+                                    onClick={handleCurrencyTab}
+                                />
+                            )
+                        })
+                    }
+                </div>
             </div>
         )
     }

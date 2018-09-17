@@ -5,7 +5,12 @@ class Header extends Component {
   render() {
     return (
       <div className="header">
-        LOGO
+        <div className="logo-container">
+          <div className="logo-content">
+            <img src="./../../img/BUYHOME.png" alt="logo" className="logo" />
+            <p className="logo-text">Купи доМ</p>
+          </div>
+        </div>
       </div>
     )
   }

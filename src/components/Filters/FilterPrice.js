@@ -27,7 +27,8 @@ class FilterPrice extends Component {
 
     render() {
         return (
-            <div className="filter-price">
+            <div className="filter-price" style={{marginLeft: "1rem"}}>
+                <h4 style={{ margin: "0", marginTop: "1rem", marginBottom: ".5rem" }}>ВАЛЮТА:</h4>
                 <MuiThemeProvider theme={theme}>
                     <TextField
                         label="От"
