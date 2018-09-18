@@ -106,7 +106,7 @@ const ApartamentData = (props) => {
         <Card className={classes.card}>
             <Grid container>
                 <Grid className={classes.mediaBlock}>
-                    <Grid sm={12} md xl={4} item>
+                    <Grid sm={12} md  item>
                         <CardMedia
                             className={classes.cover}
                             image={props.apartamentItem.images[0]}
@@ -127,7 +127,7 @@ const ApartamentData = (props) => {
                     </Grid>
                 </Grid>
 
-                <Grid className={classes.content} style={{ paddingBottom: "0", }} sm={12} md xl={8} item>
+                <Grid className={classes.content} style={{ paddingBottom: "0", }} sm={12} md   item>
                     <Typography variant="headline" color="textPrimary" className={classes.address}>
                         {props.apartamentItem.full_address}
                     </Typography>
